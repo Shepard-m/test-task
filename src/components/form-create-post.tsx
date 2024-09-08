@@ -21,7 +21,7 @@ export default function FormCreatePost({ typeForm }: TFormCreatePost) {
   const navigate = useNavigate();
   const posts = useAppSelectors(selectorsMain.posts);
   let maxId = 0;
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<TForm>();
+  const { register, handleSubmit, formState: { errors } } = useForm<TForm>();
   const [isModal, setIsModal] = useState(false);
   const [form, setForm] = useState<TPosts>({
     id: '0',

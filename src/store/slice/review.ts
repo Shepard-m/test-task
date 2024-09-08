@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchGetPost, fetchGetReview } from "../api-actions";
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchGetReview } from "../api-actions";
 import { RequestStatus } from "../../const";
 import { TReview } from "../../type/review";
 

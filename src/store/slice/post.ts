@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { TPosts } from "../../type/posts";
 import { fetchDeleteComment, fetchDeletePost, fetchGetPost, fetchPatchPost } from "../api-actions";
 import { RequestStatus } from "../../const";

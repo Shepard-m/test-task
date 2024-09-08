@@ -33,6 +33,7 @@ export default function PostPage() {
 
   function onCloseModalDeleteClick() {
     setIsModalDelete(false);
+    setIsModalEdit(false);
   }
 
   function onDeletePostClick() {
@@ -70,13 +71,17 @@ export default function PostPage() {
             {post?.description}
           </p>
         </div>
-        {reviews !== null &&         
+        {reviews !== null && reviews?.length !== 0
+        ?         
         <div className="reviews">
           <h2 className="reviews__title">
             Отзывы
           </h2>
           <ReviewList reviews={reviews}/>
-        </div>}
+        </div>
+        :
+        ''
+        }
         {isModalDelete &&        
         <div className="modal modal--active">
           <div className="modal__wrapper">
@@ -96,7 +101,7 @@ export default function PostPage() {
               <div className="modal__content">
                 <p className="modal__text">Редактирование</p>
                 <FormCreatePost typeForm={TypeForm.EDIT}/>
-                <button className="modal__close">
+                <button className="modal__close" onClick={onCloseModalDeleteClick}>
                   <p className="visually-hidden">Закрыть модальное окно</p>
                 </button>
               </div>

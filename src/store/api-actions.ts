@@ -60,6 +60,7 @@ export const fetchPaginationPost = createAsyncThunk<TPosts[], string, {extra: Ax
   'data/fetchPaginationPost',
   async (page, {extra: api}) => {
     const { data } = await api.get(`${ApiRoute.ARTICLE}?_page=${page}&_per_page=${countOfPostsPage}`);
+    
     return data.data;
   }
 );

@@ -238,6 +238,7 @@ body {
   font-size: 18px;
   background-color: var(--white);
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .modal {
@@ -289,6 +290,7 @@ body {
 .modal__link {
   color: var(--white);
   font-size: 16px;
+  cursor: pointer;
 }
 .modal__link:hover {
   text-decoration: underline;
