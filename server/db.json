@@ -1,0 +1,108 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "description": "lorem",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "hh4",
+      "description": "444",
+      "views": 0
+    },
+    {
+      "id": "3",
+      "title": "44",
+      "description": "44",
+      "views": 0
+    },
+    {
+      "id": "7",
+      "title": "48",
+      "description": "48",
+      "views": 0
+    },
+    {
+      "id": "8",
+      "title": "68",
+      "description": "68",
+      "views": 0
+    }
+  ],
+  "comments": [
+    {
+      "text": "lorem 1",
+      "name": "igor",
+      "id": "1",
+      "postId": "1"
+    },
+    {
+      "text": "lorem 1",
+      "name": "igor",
+      "id": "2",
+      "postId": "1"
+    },
+    {
+      "text": "lorem 1",
+      "name": "igor",
+      "id": "3",
+      "postId": "1"
+    },
+    {
+      "text": "lorem 1",
+      "name": "igor",
+      "id": "4",
+      "postId": "1"
+    },
+    {
+      "text": "lorem 2",
+      "name": "igor",
+      "id": "5",
+      "postId": "2"
+    },
+    {
+      "text": "lorem 2",
+      "name": "igor",
+      "id": "6",
+      "postId": "2"
+    },
+    {
+      "text": "lorem 2",
+      "name": "igor",
+      "id": "7",
+      "postId": "2"
+    },
+    {
+      "text": "lorem 2",
+      "name": "igor",
+      "id": "8",
+      "postId": "2"
+    },
+    {
+      "text": "lorem 3",
+      "name": "igor",
+      "id": "9",
+      "postId": "3"
+    },
+    {
+      "text": "lorem 3",
+      "name": "igor",
+      "id": "10",
+      "postId": "3"
+    },
+    {
+      "text": "lorem 3",
+      "name": "igor",
+      "id": "11",
+      "postId": "3"
+    },
+    {
+      "text": "lorem 13",
+      "name": "igor",
+      "id": "12",
+      "postId": "3"
+    }
+  ]
+}

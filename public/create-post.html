@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="scroll-lock">
+  <header class="header">
+    <div class="container">
+      <ul class="header__navigate">
+        <li class="header__navigate-item">
+          <a href="index.html" class="header__navigate-link">Главная</a>
+        </li>
+        <li class="header__navigate-item">
+          <a href="index.html" class="header__navigate-link">Создание поста</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <form action="" class="form-post">
+        <div class="form-post__content">
+          <div class="form-post__row">
+            <label for="title" class="form-post__label">Заголовок статьи</label>
+            <input type="text" id="title" class="form-post__input">
+          </div>
+          <div class="form-post__row">
+            <label for="description" class="form-post__label">Содержимое статьи</label>
+            <textarea type="text" id="description" class="form-post__input--big"></textarea>
+          </div>
+          <button class="form-post__button">Создать пост</button>
+        </div>
+      </form>
+      <div class="modal modal--active">
+        <div class="modal__wrapper">
+          <div class="modal__content">
+            <p class="modal__text">Пост создан</p>
+            <a href="" class="modal__link">Вернутся на главная страницу</a>
+            <button class="modal__close">
+              <p class="visually-hidden">Закрыть модальное окно</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

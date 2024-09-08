@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <ul class="header__navigate">
+        <li class="header__navigate-item">
+          <a href="index.html" class="header__navigate-link">Главная</a>
+        </li>
+        <li class="header__navigate-item">
+          <a href="index.html" class="header__navigate-link">Создание поста</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="post">
+        <div class="post__interface">
+          <button class="post__button post__button--edit">
+            <p class="visually-hidden">
+              Отредактировать статью
+            </p>
+          </button>
+          <button class="post__button post__button--delete">
+            <p class="visually-hidden">
+              Удалить статью
+            </p>
+          </button>
+        </div>
+        <h2 class="post__title">
+          Text
+        </h2>
+        <span class="post__views">Кол-во просмотров: 100</span>
+        <p class="post__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit ratione veritatis illum nam ex
+          animi delectus rerum qui laborum enim a laudantium tempora doloribus quas ipsum nemo, voluptatum pariatur?
+        </p>
+      </div>
+      <div class="reviews">
+        <h2 class="reviews__title">
+          Отзывы
+        </h2>
+        <ul class="reviews__list">
+          <li class="reviews__item">
+            <div class="reviews__item-user">
+              <img src="./img/avatar.svg" alt="" class="reviews__item-avatar" width="30" height="30">
+              <span class="reviews__item-name">Igor</span>
+            </div>
+            <p class="reviews__item-comments">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum
+              doloribus rem velit incidunt, quibusdam iste cumque tenetur unde accusantium, magni quas, atque deleniti
+              qui laboriosam? Rem quaerat ab explicabo?</p>
+          </li>
+          <li class="reviews__item">
+            <div class="reviews__item-user">
+              <img src="./img/avatar.svg" alt="" class="reviews__item-avatar" width="30" height="30">
+              <span class="reviews__item-name">Igor</span>
+            </div>
+            <p class="reviews__item-comments">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum
+              doloribus rem velit incidunt, quibusdam iste cumque tenetur unde accusantium, magni quas, atque deleniti
+              qui laboriosam? Rem quaerat ab explicabo?</p>
+          </li>
+        </ul>
+      </div>
+      <div class="modal modal--active">
+        <div class="modal__wrapper modal__wrapper--edit">
+          <div class="modal__content">
+            <p class="modal__text">Редактирование</p>
+            <form action="" class="form-post">
+              <div class="form-post__content">
+                <div class="form-post__row">
+                  <label for="title" class="form-post__label">Заголовок статьи</label>
+                  <input type="text" id="title" class="form-post__input">
+                </div>
+                <div class="form-post__row">
+                  <label for="description" class="form-post__label">Содержимое статьи</label>
+                  <textarea type="text" id="description" class="form-post__input--big"></textarea>
+                </div>
+                <button class="form-post__button">Отредактировать пост</button>
+              </div>
+            </form>
+            <button class="modal__close">
+              <p class="visually-hidden">Закрыть модальное окно</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
