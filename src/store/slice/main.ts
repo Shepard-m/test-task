@@ -48,6 +48,7 @@ const mainSlice = createSlice({
   selectors: {
     posts: (state) => state.posts,
     postsPage: (state) => state.postsPage,
+    statusPost: (state) => state.statusPost,
   }
 });
 
