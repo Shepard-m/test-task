@@ -37,6 +37,11 @@ export default function FormCreatePost({ typeForm }: TFormCreatePost) {
     if (postStatus === RequestStatus.LOADING) {
       setIsDisabledForm(true);
     }
+
+    if (postStatus === RequestStatus.FAILED) {
+      setIsDisabledForm(false);
+    }
+
   }, [postStatus])
 
   useEffect(() => {
