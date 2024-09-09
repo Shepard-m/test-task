@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TPosts } from "../../type/posts";
-import { fetchDeleteComment, fetchDeletePost, fetchGetPost, fetchPatchPost } from "../api-actions";
+import { fetchDeleteComment, fetchDeletePost, fetchGetPost, fetchPatchPost, fetchPostNewPost } from "../api-actions";
 import { RequestStatus } from "../../const";
 
 type TInitialState = {
@@ -53,6 +53,15 @@ const postSlice = createSlice({
     .addCase(fetchPatchPost.rejected, (state) => {
       state.statusPost = RequestStatus.FAILED;
     })
+    .addCase(fetchPostNewPost.pending, (state) => {
+      state.statusPost = RequestStatus.LOADING;
+    })
+    .addCase(fetchPostNewPost.fulfilled, (state) => {
+      state.statusPost = RequestStatus.SUCCESS;
+    })
+    .addCase(fetchPostNewPost.rejected, (state) => {
+      state.statusPost = RequestStatus.FAILED;
+    })
   },
   name: 'postSlice',
   reducers: {
@@ -61,6 +70,7 @@ const postSlice = createSlice({
   initialState,
   selectors: {
     post: (state) => state.post,
+    statusPost: (state) => state.statusPost,
   }
 });
 

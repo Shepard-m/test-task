@@ -6,9 +6,10 @@ import { fetchGetPosts, fetchPatchPost, fetchPostNewPost } from "../store/api-ac
 import { selectorsMain } from "../store/slice/main";
 import { useForm } from "react-hook-form";
 import { TForm } from "../type/form-post";
-import { AppRoute, scrollLock, TextErrorForm, TextErrorServer, TypeForm, ValidationForm } from "../const";
+import { AppRoute, RequestStatus, scrollLock, TextErrorForm, TextErrorServer, TypeForm, ValidationForm } from "../const";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { selectorsPost } from "../store/slice/post";
 
 const body = document.querySelector('body') as HTMLBodyElement ;
 
@@ -19,10 +20,12 @@ type TFormCreatePost = {
 export default function FormCreatePost({ typeForm }: TFormCreatePost) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const postStatus = useAppSelectors(selectorsPost.statusPost);
   const posts = useAppSelectors(selectorsMain.posts);
   let maxId = 0;
   const { register, handleSubmit, formState: { errors } } = useForm<TForm>();
   const [isModal, setIsModal] = useState(false);
+  const [isDisabledForm, setIsDisabledForm] = useState(false);
   const [form, setForm] = useState<TPosts>({
     id: '0',
     title: '',
@@ -31,16 +34,18 @@ export default function FormCreatePost({ typeForm }: TFormCreatePost) {
   })
 
   useEffect(() => {
+    if (postStatus === RequestStatus.LOADING) {
+      setIsDisabledForm(true);
+    }
+  }, [postStatus])
+
+  useEffect(() => {
     if (isModal) {
       body.classList.add(scrollLock);
     } else {
       body.classList.remove(scrollLock);
     }
   }, [isModal])
-
-  useEffect(() => {
-    dispatch(fetchGetPosts());
-  }, [])
 
   useEffect(() => {
     maxId = findMaxPostId(posts) + 1;
@@ -102,7 +107,8 @@ export default function FormCreatePost({ typeForm }: TFormCreatePost) {
             maxLength: {
               value: ValidationForm.TITLE.max,
               message: TextErrorForm.TITLE.max
-            }
+            },
+            disabled: isDisabledForm,
           })} className="form-post__input" onChange={onInputTitleChange}/>
           {errors.description &&
             <span style={{color: 'red'}}>{errors.description.message}</span>
@@ -119,13 +125,14 @@ export default function FormCreatePost({ typeForm }: TFormCreatePost) {
             maxLength: {
               value: ValidationForm.DESCRIPTION.max,
               message: TextErrorForm.DESCRIPTION.max
-            }
+            },
+            disabled: isDisabledForm,
           })} className="form-post__input--big" onChange={onInputDescriptionChange}/>
           {errors.title &&
             <span style={{color: 'red'}}>{errors.title.message}</span>
           }
         </div>
-        <button className="form-post__button">
+        <button className="form-post__button" disabled={isDisabledForm}>
           {typeForm === TypeForm.CREATE 
               ?
               'Создать пост'

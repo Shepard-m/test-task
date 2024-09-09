@@ -32,6 +32,12 @@
     },
     {
       "id": "7",
+      "title": "node",
+      "description": "Node.js (или просто Node) — это серверная платформа для работы с JavaScript через движок V8. JavaScript выполняет действие на стороне клиента, а Node — на сервере. С помощью Node можно писать полноценные приложения.",
+      "views": 0
+    },
+    {
+      "id": "8",
       "title": "test",
       "description": "test",
       "views": 0

@@ -13,9 +13,11 @@ export default function PostPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const post = useAppSelectors(selectorsPost.post);
+  const statusPost = useAppSelectors(selectorsPost.statusPost);
   const reviews = useAppSelectors(selectorsReview.review);
   const dispatch = useAppDispatch();
   const [isModalDelete, setIsModalDelete] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [isModalEdit, setIsModalEdit] = useState(false);
   useEffect(() => {
     if (id !== undefined) {
@@ -23,6 +25,10 @@ export default function PostPage() {
       dispatch(fetchGetReview(id));
     }
   }, [])
+
+  useEffect(() => {
+    setIsDisabled(true);
+  }, [statusPost])
 
   function onOpenModalDeleteClick() {
     setIsModalDelete(true);
@@ -88,7 +94,7 @@ export default function PostPage() {
             <div className="modal__content">
               <p className="modal__text">Вы точно хотите удалить статью</p>
               <p className="modal__link" onClick={onDeletePostClick}>дa</p>
-              <button className="modal__close" onClick={onCloseModalDeleteClick}>
+              <button className="modal__close" onClick={onCloseModalDeleteClick} disabled={isDisabled}>
                 <p className="visually-hidden">Закрыть модальное окно</p>
               </button>
             </div>
